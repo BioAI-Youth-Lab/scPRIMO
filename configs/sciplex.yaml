@@ -1,0 +1,45 @@
+dataset:
+  h5ad_path: data/sciplex/sciplex_processed.h5ad
+  split_dir: data/sciplex/splits_82
+  fold: 1
+  k: 5
+  test_size: 0.2
+  good_smile_key: good_smile_chemvae
+  good_smile_value: 1
+  cell_type_col: cell_type
+  dose_col: dose
+  chem_onehot_path: checkpoints/chemicalVAE/onehot_zinc.npy
+
+model:
+  conditioning_dim: 277
+  embedding_dim: 10
+  conditioning_depth: 2
+  n_flows: 20
+  in_channels: 10
+  hidden_dim: 1024
+  hidden_depth: 2
+  activation: none
+  conditioner_use_bn: true
+  use_enhanced_cov: true
+  use_llm_similars: true
+  use_chemberta: false
+  similars_map_path: artifacts/sciplex/0.2/similars_map_fold1.json
+
+training:
+  n_epochs: 50
+  batch_size: 512
+  lr: 1.2e-5
+  seed: 42
+  device: cuda:0
+  use_scheduler: true
+  scheduler_type: cosine
+  weight_decay: 0.0
+  centroid_lambda: 0.20
+
+paths:
+  chemvae_model: checkpoints/chemicalVAE/model_params_525.pt
+  std_param_dir: checkpoints/chemicalVAE
+  scvi_model_dir: checkpoints/sciplex/scvi
+  model_save_dir: outputs/sciplex/cinn/fold{fold}_{test_size}_grca
+  cache_dir: artifacts/sciplex/cached_data_0.2_controlpca16_vehicle_residualshrink10_pca64_perturbstringprocessed
+

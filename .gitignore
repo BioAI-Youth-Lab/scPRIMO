@@ -1,0 +1,44 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.DS_Store
+
+# Local environments
+.venv/
+venv/
+env/
+.env
+*.env
+
+# Data, checkpoints, and generated outputs
+/data/
+/checkpoints/
+/outputs/
+/artifacts/*
+*.h5ad
+*.h5
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+*.pkl
+*.pickle
+
+# Keep lightweight placeholders and docs trackable.
+!/data/.gitkeep
+!/checkpoints/.gitkeep
+!/outputs/.gitkeep
+!/artifacts/.gitkeep
+!/artifacts/README.md
+!/artifacts/**/
+!/artifacts/**/*.csv
+!/artifacts/**/*.json
+!/artifacts/**/*.md
+!/artifacts/**/*.tex
+!/artifacts/**/*.png
+!/artifacts/**/*.pdf
+!/artifacts/**/*.txt

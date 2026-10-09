@@ -1,0 +1,7 @@
+provider: openai
+model: gpt-4o-mini
+base_url: https://api.openai.com/v1
+api_key_env: OPENAI_API_KEY
+prompt_template: assets/prompts/llm_drug_select_prompt.txt
+max_candidates: 3
+

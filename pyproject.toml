@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "primo-perturbation"
+version = "0.1.0"
+description = "PRIMO: control-anchored LLM-guided perturbation response prediction."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+  { name = "PRIMO authors" }
+]
+dependencies = [
+  "anndata",
+  "numpy",
+  "pandas",
+  "scanpy",
+  "scikit-learn",
+  "scipy",
+  "torch",
+  "scvi-tools==0.7.1",
+  "tqdm",
+  "pyyaml",
+  "rdkit",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+primo-train-scvi = "primo.train.train_scvi:main"
+primo-train-nips = "primo.train.train_nips:main"
+primo-train-sciplex = "primo.train.train_sciplex:main"
+primo-predict-nips = "primo.predict.predict_nips:main"
+primo-predict-sciplex = "primo.predict.predict_sciplex:main"
+primo-evaluate-nips-direction = "primo.evaluation.evaluate_nips_direction:main"
+primo-evaluate-sciplex-direction = "primo.evaluation.evaluate_sciplex_direction:main"
+primo-build-nips-reference = "primo.data.build_nips_global_benchmark_ref:main"

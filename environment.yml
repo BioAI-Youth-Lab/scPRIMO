@@ -1,0 +1,21 @@
+name: primo
+channels:
+  - conda-forge
+  - pytorch
+  - nvidia
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - scanpy
+  - anndata
+  - pytorch
+  - rdkit
+  - pyyaml
+  - tqdm
+  - pip:
+      - scvi-tools==0.7.1
+      - -e .
